@@ -14,10 +14,25 @@ const { sign } = require('crypto');
 const fs = require('fs');
 const WebSocket = require('ws');
 
+const express = require('express');
+const bodyParser = require('body-parser');
+var cors = require('cors');
+const { response, request, query } = require('express');
+
 //Import Config
 let configBuffer = fs.readFileSync('config.json');
 let configFile = JSON.parse(configBuffer);
 var settings = configFile.settings;
+
+//Setup WebServer
+var webServer = express();
+webServer.use(bodyParser.json({ extended: true }));
+webServer.options('*', cors()) //CORS Security Option
+webServer.use(express.static('output'));
+webServer.listen(settings.webPort, () => {
+    //console.log("WebServer running on port " + settings.webPort);
+    console.log("Open a web browser to 127.0.0.1:" + settings.webPort + "/web/1.html");
+});
 
 if (settings.devMode) {
     var wsUrl = ("ws://" + "127.0.0.1:1880" + "/socketJpgBinary");

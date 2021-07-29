@@ -1,10 +1,11 @@
 {
     "settings": {
         "vProIp": "10.0.12.208",
-        "wsOnStart": true,
+        "wsOnStart": false,
         "frameDiscardInterval": 30,
         "dumpDirectory": "./output/",
         "devMode": false,
-        "debugging": false
+        "debugging": false,
+        "webPort": 3008
     }
 }
