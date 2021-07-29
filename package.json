@@ -11,5 +11,9 @@
     "url": "vpro-sniffer"
   },
   "author": "Jack Woodgate",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "atob": "^2.1.2",
+    "ws": "^8.0.0"
+  }
 }
