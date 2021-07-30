@@ -1,7 +1,7 @@
 {
     "settings": {
         "vProIp": "10.0.12.208",
-        "wsOnStart": false,
+        "wsOnStart": true,
         "frameDiscardInterval": 30,
         "dumpDirectory": "./output/",
         "devMode": false,

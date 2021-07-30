@@ -28,10 +28,11 @@ var settings = configFile.settings;
 var webServer = express();
 webServer.use(bodyParser.json({ extended: true }));
 webServer.options('*', cors()) //CORS Security Option
-webServer.use(express.static('output'));
+webServer.use(express.static('./'));
 webServer.listen(settings.webPort, () => {
     //console.log("WebServer running on port " + settings.webPort);
-    console.log("Open a web browser to 127.0.0.1:" + settings.webPort + "/web/1.html");
+    console.log("Open a web browser to http://127.0.0.1:" + settings.webPort + "/web/live.html?signal=1");
+    console.log("Replace the 'signal=1' with whatever signal you want to monitor.");
 });
 
 if (settings.devMode) {
